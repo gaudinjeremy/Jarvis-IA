@@ -1,2 +1,2 @@
 *TEST1==say "$(python ./plugins_installed/jarvis-master/api/main.py "test1" "zou")"
-*TEST12==say "$(python ./plugins_installed/jarvis-master/api/main.py "test2" "zouLOU")"
+*TEST2==say "$(python ./plugins_installed/jarvis-master/api/main.py "test2" "zouLOU")"
