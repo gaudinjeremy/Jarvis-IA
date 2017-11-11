@@ -30,11 +30,9 @@ def main():
 	global TOSAY
 
 	if sys.argv[1] == "test1":
-#		test1(sys.argv[2])
-		TOSAY = "echo de test 1"
+		test1(sys.argv[2])
 	elif sys.argv[1] == "test2":
-#		test2(sys.argv[2])
-		TOSAY = "echo de test 2"
+		test2(sys.argv[2])
 	else:
 		TOSAY = "Commande inconnue"
 
