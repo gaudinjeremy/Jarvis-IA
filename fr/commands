@@ -1,2 +1,2 @@
-*ZOU1==say "$(python ./plugins_installed/jarvis-master/api/main.py "test1" "zou")"
-*ZOU2==say "$(python ./plugins_installed/jarvis-master/api/main.py "test2" "zouLOU")"
+*ZOU1==say "$(python ./plugins_installed/Jarvis-IA/api/main.py "test1" "zou")"
+*ZOU2==say "$(python ./plugins_installed/Jarvis-IA/api/main.py "test2" "zouLOU")"
