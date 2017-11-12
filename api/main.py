@@ -4,7 +4,7 @@ import sys
 import time
 from lxml import etree
 
-tree = etree.parse("brain.xml")
+tree = etree.parse("jarvis/plugins_installed/Jarvis-IA/api/brain.xml")
 
 TOSAY=""
 
