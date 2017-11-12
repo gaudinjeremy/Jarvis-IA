@@ -32,9 +32,8 @@ def test2(arg):
 
 def AddTest():
 	for user in tree.xpath("/users/user"):
-
-		print(user.get("data-id"))
-
+		print user.get("data-id")
+		
 def main():
 	global TOSAY
 
