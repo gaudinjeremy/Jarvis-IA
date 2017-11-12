@@ -34,6 +34,18 @@ def AddTest():
 	for user in tree.xpath("/plugins/plugin[nom='micro']/value"):
 		print user.text
 
+def AddCell():
+
+	tree = etree.parse("./plugins_installed/Jarvis-IA/api/Brain.xml")
+	users = etree.Element("plugins")
+	user = etree.SubElement(users, "plugin")
+	user.set("data-id", "102")
+	nom = etree.SubElement(user, "test")
+	nom.text = "Zorro"
+	metier = etree.SubElement(user, "value")
+	metier.text = "Danseur"
+	print etree.tostring(users, pretty_print=True)
+
 def main():
 	global TOSAY
 
@@ -43,6 +55,8 @@ def main():
 		test2(sys.argv[2])
 	elif sys.argv[1] == "tree":
 		AddTest()
+	elif sys.argv[1] == "cell":
+		AddCell()
 	else:
 		TOSAY = "Commande inconnue"
 

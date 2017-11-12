@@ -1,3 +1,4 @@
 *ZOU1==say "$(python ./plugins_installed/Jarvis-IA/api/main.py "test1" "zou")"
 *ZOU2==say "$(python ./plugins_installed/Jarvis-IA/api/main.py "test2" "zouLOU")"
 *tree==say "$(python ./plugins_installed/Jarvis-IA/api/main.py "tree" "tree")"
+*cell==say "$(python ./plugins_installed/Jarvis-IA/api/main.py "cell" "cell")"
