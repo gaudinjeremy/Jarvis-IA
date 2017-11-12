@@ -32,7 +32,7 @@ def AddTest():
 
 	tree = etree.parse("./plugins_installed/Jarvis-IA/api/Brain.xml")
 	for user in tree.xpath("/plugins/plugin[nom='micro']/value"):
-    print user.text
+		print user.text
 
 def main():
 	global TOSAY
