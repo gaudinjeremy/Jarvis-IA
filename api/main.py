@@ -44,7 +44,7 @@ def AddCell():
 	nom.text = "Zorro"
 	metier = etree.SubElement(user, "value")
 	metier.text = "Danseur"
-	print etree.tostring(users, pretty_print=True)
+	tree.write('./plugins_installed/Jarvis-IA/api/Brain.xml')
 
 def main():
 	global TOSAY
