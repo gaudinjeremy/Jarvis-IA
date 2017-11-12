@@ -4,8 +4,6 @@ import sys
 import time
 from lxml import etree
 
-tree = etree.parse("./plugins_installed/Jarvis-IA/api/brain.xml")
-
 TOSAY=""
 
 def test1(arg):
@@ -31,9 +29,12 @@ def test2(arg):
 	return TOSAY
 
 def AddTest():
-	for user in tree.xpath("/users/user"):
-		print user.get("data-id")
-		
+
+	tree = etree.parse("./plugins_installed/Jarvis-IA/api/brain.xml")
+
+	for user in tree.xpath("/users/user[metier='Veterinaire']/nom"):
+		print user.text
+
 def main():
 	global TOSAY
 
