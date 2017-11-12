@@ -31,14 +31,8 @@ def test2(arg):
 	return TOSAY
 
 def AddTest():
-	users = etree.Element("users")
-	user = etree.SubElement(users, "user")
-	user.set("data-id", "101")
-	nom = etree.SubElement(user, "nom")
-	nom.text = "Zorro"
-	metier = etree.SubElement(user, "metier")
-	metier.text = "Danseur"
-	print(etree.tostring(users, pretty_print=True))
+	for user in tree.xpath("/users/user"):
+    	print(user.get("data-id"))
 
 def main():
 	global TOSAY
