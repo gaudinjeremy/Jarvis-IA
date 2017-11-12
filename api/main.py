@@ -39,12 +39,12 @@ def AddCell():
 	tree = etree.parse("./plugins_installed/Jarvis-IA/api/Brain.xml")
 	users = etree.Element("plugins")
 	user = etree.SubElement(users, "plugin")
-	user.set("data-id", "102")
+	user.set("data-id", "103")
 	nom = etree.SubElement(user, "test")
 	nom.text = "Zorro"
 	metier = etree.SubElement(user, "value")
 	metier.text = "Danseur"
-	tree.write('./plugins_installed/Jarvis-IA/api/Brain.xml')
+	tree.write('./plugins_installed/Jarvis-IA/api/Brain2.xml')
 
 def main():
 	global TOSAY
