@@ -36,13 +36,12 @@ def AddTest():
 
 def AddCell():
 
-	tree = etree.parse("./plugins_installed/Jarvis-IA/api/Brain.xml")
-	plugins = tree.Element("plugins")
-	plugin = tree.SubElement(plugins, "plugin")
+	plugins = etree.Element("plugins")
+	plugin = etree.SubElement(plugins, "plugin")
 	plugin.set("data-id", "103")
-	nom = tree.SubElement(plugin, "test")
+	nom = etree.SubElement(plugin, "test")
 	nom.text = "Zorro"
-	value = tree.SubElement(plugin, "value")
+	value = etree.SubElement(plugin, "value")
 	value.text = "Danseur"
 	tree.write('./plugins_installed/Jarvis-IA/api/Brain2.xml')
 
