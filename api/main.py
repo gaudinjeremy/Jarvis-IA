@@ -44,7 +44,6 @@ def AddCell():
 	nom.text = "Zorro"
 	value = etree.SubElement(plugin, "value")
 	value.text = "Danseur"
-	print etree.tostring(plugins, pretty_print=True)
 	tree.write('./plugins_installed/Jarvis-IA/api/Brain2.xml')
 
 def main():
