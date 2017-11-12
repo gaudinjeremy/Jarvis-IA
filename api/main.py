@@ -30,7 +30,7 @@ def test2(arg):
 
 def AddTest():
 
-	tree = etree.parse("./plugins_installed/Jarvis-IA/api/brain.xml")
+	tree = etree.parse("./plugins_installed/Jarvis-IA/api/Brain.xml")
 
 	for user in tree.xpath("/users/user[metier='Veterinaire']/nom"):
 		print user.text
