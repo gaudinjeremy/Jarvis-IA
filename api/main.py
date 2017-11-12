@@ -43,7 +43,7 @@ def AddCell():
 	nom.text = "Zorro"
 	value = etree.SubElement(plugin, "value")
 	value.text = "Danseur"
-	tree.write('./plugins_installed/Jarvis-IA/api/Brain2.xml')
+	plugins.write('./plugins_installed/Jarvis-IA/api/Brain2.xml')
 
 def main():
 	global TOSAY
