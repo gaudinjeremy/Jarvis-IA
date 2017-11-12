@@ -1,1 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<plugins>
+    <plugin data-id="101">
+        <nom>micro</nom>
+        <value>90</value>
+    </plugin>
+    <plugin data-id="102">
+        <nom>volume</nom>
+        <value>95</value>
+    </plugin>
+</plugins>
