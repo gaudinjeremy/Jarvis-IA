@@ -1,6 +1,10 @@
 #!/usr/bin/python
 
 import sys
+import time
+from lxml import etree
+
+tree = etree.parse("brain.xml")
 
 TOSAY=""
 
@@ -26,6 +30,16 @@ def test2(arg):
 
 	return TOSAY
 
+def AddTest():
+	users = etree.Element("users")
+	user = etree.SubElement(users, "user")
+	user.set("data-id", "101")
+	nom = etree.SubElement(user, "nom")
+	nom.text = "Zorro"
+	metier = etree.SubElement(user, "metier")
+	metier.text = "Danseur"
+	print(etree.tostring(users, pretty_print=True))
+
 def main():
 	global TOSAY
 
@@ -33,6 +47,8 @@ def main():
 		test1(sys.argv[2])
 	elif sys.argv[1] == "test2":
 		test2(sys.argv[2])
+	elif sys.argv[1] == "tree":
+		AddTest()
 	else:
 		TOSAY = "Commande inconnue"
 
