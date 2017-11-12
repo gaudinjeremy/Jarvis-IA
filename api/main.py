@@ -32,8 +32,14 @@ def AddTest():
 
 	tree = etree.parse("./plugins_installed/Jarvis-IA/api/Brain.xml")
 
-	for user in tree.xpath("/users/user[metier='Veterinaire']/nom"):
-		print user.text
+	users = etree.Element("users")
+	user = etree.SubElement(users, "user")
+	user.set("data-id", "101")
+	nom = etree.SubElement(user, "nom")
+	nom.text = "Zorro"
+	metier = etree.SubElement(user, "metier")
+	metier.text = "Danseur"
+	print etree.tostring(users, pretty_print=True)
 
 def main():
 	global TOSAY
