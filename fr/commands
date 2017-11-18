@@ -1,6 +1,7 @@
-*initIA==jv_ia initIA
-*getBrain==jv_ia getBrain
-*addPlugin (*)==jv_ia addPlugin (1)
-*addKey (*) (*)==sjv_ia addKey (1) (2)
-*addValue (*) (*) (*)==jv_ia addValue (1) (2) (3)
-*updateValue (*) (*) (*)==jv_ia updateValue (1) (2) (3)
+*initIA==jv_ia_say initIA
+*getBrain==jv_ia_say getBrain
+*addPlugin (*)==jv_ia_say addPlugin (1)
+*addKey (*) (*)==jv_ia_say addKey (1) (2)
+*addValue (*) (*) (*)==jv_ia_say addValue (1) (2) (3)
+*getValue (*) (*)==jv_ia_say getValue (1) (2)
+*updateValue (*) (*) (*)==jv_ia_say updateValue (1) (2) (3)

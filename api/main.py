@@ -26,15 +26,15 @@ def updateJarvisBrain(brain):
 		jarvisBrain = pickle.Pickler(fichier)
 		jarvisBrain.dump(brain)
 
-	getValue("IA", "confirmation")
+	getValue("ia", "confirmation")
 
 
-# crée le "BRAIN" de Jarvis
+# cree le "BRAIN" de Jarvis
 def initIA():
 	global TOSAY
 
 	brain = {}
-	brain['IA'] = {
+	brain['ia'] = {
 	"confirmation" : ["voila", "c'est fait"],
 	"erreur" : ["aie", "oupss"],
 	}
@@ -52,7 +52,7 @@ def initPlugin(plugin, key):
 		jarvis = brain.get(plugin)
 
 		if jarvis.has_key(key):
-			#updateValue(plugin, key, value)
+			TOSAY = ""
 
 		else:
 			addKey(plugin, key)
@@ -62,7 +62,7 @@ def initPlugin(plugin, key):
 		initPlugin(plugin, key)
 
 
-# renvoi une valeur appartenant au plugin et à la clef envoyé
+# renvoi une valeur appartenant au plugin et a la clef envoyee
 def getValue(plugin, key):
 	global TOSAY
 
@@ -98,7 +98,7 @@ def addPlugin(plugin):
 		updateJarvisBrain(brain)
 
 
-# Ajoute une clefs au plugins envoyé au "BRAIN" de Jarvis
+# Ajoute une clefs au plugins envoyer au "BRAIN" de Jarvis
 def addKey(plugin,key):
 	global TOSAY
 
@@ -111,9 +111,9 @@ def addKey(plugin,key):
 			TOSAY = "cette clef existe deja"
 
 		else:
-			brain[plugin] = {
-			key : ["0"],
-			}
+			brain[plugin].update({
+			key : ["0"]
+			})
 
 			updateJarvisBrain(brain)
 
@@ -121,7 +121,7 @@ def addKey(plugin,key):
 		TOSAY = "ce plugin n'existe pas"
 
 
-# Ajoute une valeur au plugins et à la clef envoyé au "BRAIN" de Jarvis
+# Ajoute une valeur au plugins et a la clef envoye au "BRAIN" de Jarvis
 def addValue(plugin,key,value):
 	global TOSAY
 
@@ -135,9 +135,9 @@ def addValue(plugin,key,value):
 			newValue = jarvis.get(key)
 			newValue.append(value)
 
-			brain[plugin] = {
-			key : newValue,
-			}
+			brain[plugin].update({
+			key : newValue
+			})
 
 			updateJarvisBrain(brain)
 
@@ -147,7 +147,7 @@ def addValue(plugin,key,value):
 		TOSAY = "ce plugin n'existe pas"
 
 
-# modifie une valeur au plugins et à la clef envoyé au "BRAIN" de Jarvis
+# modifie une valeur au plugins et a la clef envoye au "BRAIN" de Jarvis
 def updateValue(plugin,key,value):
 	global TOSAY
 
@@ -158,9 +158,9 @@ def updateValue(plugin,key,value):
 
 		if jarvis.has_key(key):
 
-			brain[plugin] = {
-			key : [value],
-			}
+			brain[plugin].update({
+			key : [value]
+			})
 
 			updateJarvisBrain(brain)
 
@@ -177,25 +177,25 @@ def main():
 		initIA()
 
 	elif sys.argv[1] == "initPlugin":
-		initPlugin(sys.argv[2], sys.argv[3])
+		initPlugin(sys.argv[2].lower(), sys.argv[3].lower())
 
 	elif sys.argv[1] == "getBrain":
 		getJarvisBrain()
 
 	elif sys.argv[1] == "addPlugin":
-		addPlugin(sys.argv[2])
+		addPlugin(sys.argv[2].lower())
 
 	elif sys.argv[1] == "addKey":
-		addKey(sys.argv[2], sys.argv[3])
+		addKey(sys.argv[2].lower(), sys.argv[3].lower())
 
 	elif sys.argv[1] == "addValue":
-		addValue(sys.argv[2], sys.argv[3], sys.argv[4])
+		addValue(sys.argv[2].lower(), sys.argv[3].lower(), sys.argv[4])
 
 	elif sys.argv[1] == "updateValue":
-		updateValue(sys.argv[2], sys.argv[3], sys.argv[4])
+		updateValue(sys.argv[2].lower(), sys.argv[3].lower(), sys.argv[4])
 
 	elif sys.argv[1] == "getValue":
-		getValue(sys.argv[2], sys.argv[3])
+		getValue(sys.argv[2].lower(), sys.argv[3].lower())
 
 	else:
 		TOSAY = "Commande inconnue dans mon IA"
