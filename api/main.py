@@ -81,7 +81,7 @@ def getValue(plugin, key):
 		else:
 			TOSAY = "clef introuvable"
 	else:
-		TOSAY = "Plugin introuvable"
+		TOSAY = "plugin introuvable"
 
 
 # Ajoute un plugin au "BRAIN" de Jarvis
